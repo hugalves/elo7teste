@@ -1,5 +1,5 @@
 package elo7;
 
-abstract class Taxa {
-	abstract double getValorTaxa(Transferencia transferencia);
+public abstract class Taxa {
+	public abstract double getValorTaxa(Transferencia transferencia);
 }

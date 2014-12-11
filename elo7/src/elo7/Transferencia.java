@@ -5,18 +5,21 @@ import java.util.Date;
 public class Transferencia {
 	private Conta origem;
 	private Conta destino;
-	private float valor;
-	private float valorComTaxa;
+	private String descricao;
+	private double valor;
+	private double valorDaTaxa;
+	private Date dataCadastro = new Date();
 	private Date data;
-	private TipoTaxa tipoTaxa;
+	private int tipoTaxa;
 
-	public Transferencia(Conta origem, Conta destino, float valor,
-			Date data, TipoTaxa tipoTaxa) {
+	public Transferencia(Conta origem, Conta destino, String descricao,
+			double valor, Date data, int tipoTaxa) {
 		this.setOrigem(origem);
 		this.setDestino(destino);
+		this.setDescricao(descricao);
+		this.setTipoTaxa(tipoTaxa);
 		this.setValor(valor);
 		this.setData(data);
-		this.setTipoTaxa(tipoTaxa);
 	}
 
 	public Conta getOrigem() {
@@ -35,12 +38,13 @@ public class Transferencia {
 		this.destino = destino;
 	}
 
-	public float getValor() {
-		return valor;
+	public double getValor() {
+		return valor + valorDaTaxa;
 	}
 
-	public void setValor(float valor) {
+	public void setValor(double valor) {
 		this.valor = valor;
+		this.setValorDaTaxa();
 	}
 
 	public Date getData() {
@@ -51,19 +55,48 @@ public class Transferencia {
 		this.data = data;
 	}
 
-	public TipoTaxa getTipoTaxa() {
+	public int getTipoTaxa() {
 		return tipoTaxa;
 	}
 
-	public void setTipoTaxa(TipoTaxa tipoTaxa) {
+	public void setTipoTaxa(int tipoTaxa) {
 		this.tipoTaxa = tipoTaxa;
 	}
 
-	public float getValorComTaxa() {
-		return valorComTaxa;
+	public void setValorDaTaxa() {
+		Taxa taxa = null;
+
+		switch (this.getTipoTaxa()) {
+		case 1:
+			taxa = new Taxa1();
+			break;
+		case 2:
+			taxa = new Taxa2();
+			break;
+		case 3:
+			taxa = new Taxa3();
+			break;
+		case 4:
+			taxa = new Taxa4();
+			break;
+		}
+
+		this.valorDaTaxa = taxa.getValorTaxa(this);
 	}
 
-	public void setValorComTaxa(float valorComTaxa) {
-		this.valorComTaxa = valorComTaxa;
+	public double getValorDaTaxa() {
+		return valorDaTaxa;
+	}
+
+	public Date getDataCadastro() {
+		return dataCadastro;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 }
