@@ -1,0 +1,11 @@
+package br.com.elo7;
+
+public class Gerente extends Funcionario {
+
+	@Override
+	double getBonificacao() {
+		// TODO Auto-generated method stub
+		return salario * 0.12;
+	}
+
+}
