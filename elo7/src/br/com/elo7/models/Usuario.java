@@ -1,4 +1,4 @@
-package elo7;
+package br.com.elo7.models;
 
 public class Usuario {
 	private String nome;

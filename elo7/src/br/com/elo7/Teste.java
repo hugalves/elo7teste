@@ -1,7 +1,11 @@
-package elo7;
+package br.com.elo7;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
+
+import br.com.elo7.models.Conta;
+import br.com.elo7.models.Transferencia;
+import br.com.elo7.models.Usuario;
 
 public class Teste {
 	public static void main(String[] args) {

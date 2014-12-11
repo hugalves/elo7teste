@@ -1,6 +1,12 @@
-package elo7;
+package br.com.elo7.models;
 
 import java.util.Date;
+
+import br.com.elo7.services.Taxa;
+import br.com.elo7.services.Taxa1;
+import br.com.elo7.services.Taxa2;
+import br.com.elo7.services.Taxa3;
+import br.com.elo7.services.Taxa4;
 
 public class Transferencia {
 	private Conta origem;

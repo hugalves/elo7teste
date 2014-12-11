@@ -1,4 +1,4 @@
-package elo7;
+package br.com.elo7.models;
 
 import java.util.ArrayList;
 import java.util.List;

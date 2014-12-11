@@ -1,7 +1,9 @@
-package elo7;
+package br.com.elo7.utils;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
+
+import br.com.elo7.models.Transferencia;
 
 public class Utils {
 	public static long diasDeDiferenca(Transferencia transferencia) {

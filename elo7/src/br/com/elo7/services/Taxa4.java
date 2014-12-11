@@ -1,4 +1,6 @@
-package elo7;
+package br.com.elo7.services;
+
+import br.com.elo7.models.Transferencia;
 
 public class Taxa4 extends Taxa {
 
