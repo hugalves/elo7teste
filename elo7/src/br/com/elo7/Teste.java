@@ -25,7 +25,8 @@ public class Teste {
 		origem.transferePara(destino, ajudaChaves);
 		System.out.println("Saldo chaves: " + destino.getSaldo());
 		System.out.println("Saldo quico: " + origem.getSaldo());
-		System.out.println("Transferencias quico: " + origem.getTransferencias().get(0).getDescricao());
+		System.out.println("Transferencias quico: "
+				+ origem.getTransferencias().get(0).getDescricao());
 
 	}
 }

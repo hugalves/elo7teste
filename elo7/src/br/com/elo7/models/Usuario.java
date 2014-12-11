@@ -6,7 +6,7 @@ public class Usuario {
 
 	public Usuario(String nome, String cpf) {
 		this.nome = nome;
-		this.setCpf(cpf);
+		this.cpf = cpf;
 	}
 
 	public String getNome() {

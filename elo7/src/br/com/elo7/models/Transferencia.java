@@ -28,29 +28,33 @@ public class Transferencia {
 		this.setData(data);
 	}
 
-	public Conta getOrigem() {
-		return origem;
-	}
-
 	public void setOrigem(Conta origem) {
 		this.origem = origem;
-	}
-
-	public Conta getDestino() {
-		return destino;
 	}
 
 	public void setDestino(Conta destino) {
 		this.destino = destino;
 	}
 
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
 	public double getValor() {
-		return valor + valorDaTaxa;
+		return valor;
 	}
 
 	public void setValor(double valor) {
 		this.valor = valor;
 		this.setValorDaTaxa();
+	}
+
+	public double getValorComTaxa() {
+		return this.getValor() + this.getValorComTaxa();
 	}
 
 	public Date getData() {
@@ -96,13 +100,5 @@ public class Transferencia {
 
 	public Date getDataCadastro() {
 		return dataCadastro;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
 	}
 }
