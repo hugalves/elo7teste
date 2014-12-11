@@ -4,7 +4,7 @@ import br.com.elo7.models.Transferencia;
 import br.com.elo7.utils.Utils;
 
 
-public class Taxa2 extends Taxa{
+public class TaxaB extends Taxa{
 
 	@Override
 	public double getValorTaxa(Transferencia transferencia) {

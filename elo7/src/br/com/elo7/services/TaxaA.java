@@ -2,7 +2,7 @@ package br.com.elo7.services;
 
 import br.com.elo7.models.Transferencia;
 
-public class Taxa1 extends Taxa {
+public class TaxaA extends Taxa {
 
 	@Override
 	public double getValorTaxa(Transferencia transferencia) {

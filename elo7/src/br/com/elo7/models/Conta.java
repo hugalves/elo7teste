@@ -17,9 +17,10 @@ public class Conta {
 	
 	public boolean transferePara(Conta destino, Transferencia transferencia) {
 		double valorTransferir = transferencia.getValor();
+		double valorTotal = transferencia.getValorTotal();
 
-		if (this.getSaldo() > valorTransferir) {
-			this.saldo -= valorTransferir;
+		if (this.getSaldo() >= valorTotal) {
+			this.saldo -= valorTotal;
 			destino.setSaldo(destino.getSaldo() + valorTransferir);
 			this.transferencias.add(transferencia);
 			

@@ -2,7 +2,7 @@ package br.com.elo7.services;
 
 import br.com.elo7.models.Transferencia;
 
-public class Taxa4 extends Taxa {
+public class TaxaD extends Taxa {
 
 	@Override
 	public double getValorTaxa(Transferencia transferencia) {
@@ -10,11 +10,11 @@ public class Taxa4 extends Taxa {
 		Taxa taxa = null;
 		
 		if (valor <= 25000)
-			taxa = new Taxa1();
+			taxa = new TaxaA();
 		if (valor > 25000 && valor <= 120000)
-			taxa = new Taxa2();
+			taxa = new TaxaB();
 		if (valor > 120000)
-			taxa = new Taxa3();	
+			taxa = new TaxaC();	
 		
 		return taxa.getValorTaxa(transferencia);
 	}

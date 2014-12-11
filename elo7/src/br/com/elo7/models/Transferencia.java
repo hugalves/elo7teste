@@ -3,10 +3,6 @@ package br.com.elo7.models;
 import java.util.Date;
 
 import br.com.elo7.services.Taxa;
-import br.com.elo7.services.Taxa1;
-import br.com.elo7.services.Taxa2;
-import br.com.elo7.services.Taxa3;
-import br.com.elo7.services.Taxa4;
 
 public class Transferencia {
 	private Conta origem;
@@ -16,16 +12,16 @@ public class Transferencia {
 	private double valorDaTaxa;
 	private Date dataCadastro = new Date();
 	private Date data;
-	private int tipoTaxa;
+	private TipoTaxa tipoTaxa;
 
 	public Transferencia(Conta origem, Conta destino, String descricao,
-			double valor, Date data, int tipoTaxa) {
+			double valor, Date data, String tipoTaxa) {
 		this.setOrigem(origem);
 		this.setDestino(destino);
 		this.setDescricao(descricao);
+		this.setData(data);
 		this.setTipoTaxa(tipoTaxa);
 		this.setValor(valor);
-		this.setData(data);
 	}
 
 	public void setOrigem(Conta origem) {
@@ -48,13 +44,13 @@ public class Transferencia {
 		return valor;
 	}
 
-	public void setValor(double valor) {
-		this.valor = valor;
-		this.setValorDaTaxa();
+	public double getValorTotal() {
+		return valor + valorDaTaxa;
 	}
 
-	public double getValorComTaxa() {
-		return this.getValor() + this.getValorComTaxa();
+	public void setValor(double valor) {
+		this.valor = valor;
+		setValorDaTaxa();
 	}
 
 	public Date getData() {
@@ -65,32 +61,17 @@ public class Transferencia {
 		this.data = data;
 	}
 
-	public int getTipoTaxa() {
+	public TipoTaxa getTipoTaxa() {
 		return tipoTaxa;
 	}
 
-	public void setTipoTaxa(int tipoTaxa) {
-		this.tipoTaxa = tipoTaxa;
+	public void setTipoTaxa(String tipoTaxa) {
+		this.tipoTaxa = new TipoTaxa(tipoTaxa);
 	}
 
+	//catch exceptions
 	public void setValorDaTaxa() {
-		Taxa taxa = null;
-
-		switch (this.getTipoTaxa()) {
-		case 1:
-			taxa = new Taxa1();
-			break;
-		case 2:
-			taxa = new Taxa2();
-			break;
-		case 3:
-			taxa = new Taxa3();
-			break;
-		case 4:
-			taxa = new Taxa4();
-			break;
-		}
-
+		Taxa taxa = this.getTipoTaxa().getTaxa();
 		this.valorDaTaxa = taxa.getValorTaxa(this);
 	}
 
