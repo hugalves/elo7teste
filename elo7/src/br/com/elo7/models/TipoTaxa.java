@@ -11,7 +11,7 @@ public class TipoTaxa {
 	public static final String TIPO_B = "B";
 	public static final String TIPO_C = "C";
 	public static final String TIPO_D = "D";
-	
+
 	private String tipoTaxa;
 
 	public TipoTaxa(String tipoTaxa) {
@@ -19,21 +19,19 @@ public class TipoTaxa {
 	}
 
 	public Taxa getTaxa() {
-		Taxa taxa = null;
-		
 		if (this.getTipoTaxa() == "A")
-			taxa = new TaxaA();
-		
+			return new TaxaA();
+
 		if (this.getTipoTaxa() == "B")
-			taxa = new TaxaB();
+			return new TaxaB();
 
 		if (this.getTipoTaxa() == "C")
-			taxa = new TaxaC();
+			return new TaxaC();
 
 		if (this.getTipoTaxa() == "D")
-			taxa = new TaxaD();
+			return new TaxaD();
 
-		return taxa;
+		throw new IllegalArgumentException("Tipo de Taxa inv‡lida");
 	}
 
 	public String getTipoTaxa() {

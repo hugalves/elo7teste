@@ -69,7 +69,6 @@ public class Transferencia {
 		this.tipoTaxa = new TipoTaxa(tipoTaxa);
 	}
 
-	//catch exceptions
 	public void setValorDaTaxa() {
 		Taxa taxa = this.getTipoTaxa().getTaxa();
 		this.valorDaTaxa = taxa.getValorTaxa(this);

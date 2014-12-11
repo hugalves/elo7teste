@@ -14,7 +14,7 @@ public class Conta {
 		this.setSaldo(saldo);
 		this.setUsuario(usuario);
 	}
-	
+
 	public boolean transferePara(Conta destino, Transferencia transferencia) {
 		double valorTransferir = transferencia.getValor();
 		double valorTotal = transferencia.getValorTotal();
@@ -23,11 +23,20 @@ public class Conta {
 			this.saldo -= valorTotal;
 			destino.setSaldo(destino.getSaldo() + valorTransferir);
 			this.transferencias.add(transferencia);
-			
+
 			return true;
 		}
 
 		return false;
+	}
+
+	public void imprimirMinhasTransferencias() {
+		System.out.println("------------ CONTAS -------------");
+		for (Transferencia transferencia : this.transferencias) {
+			System.out.println("Descrição: " + transferencia.getDescricao()
+					+ " - Valor: " + transferencia.getValor()
+					+ " - Valor com taxa: " + transferencia.getValorTotal());
+		}
 	}
 
 	public String getNumeroConta() {
