@@ -1,2 +1,19 @@
 1418300332959	Rename type 'Teste'
 1418302205639	Delete element
+1418306109191	Encapsulate field 'name'
+1418306113748	Encapsulate field 'cpf'
+1418306863542	Rename type 'User'
+1418307185325	Delete element
+1418307198013	Delete element
+1418307270049	Encapsulate field 'cpf'
+1418307443035	Encapsulate field 'numeroConta'
+1418307446512	Encapsulate field 'saldo'
+1418307450368	Encapsulate field 'usuario'
+1418307837058	Rename compilation unit 'TipoTaxa.java'
+1418307898938	Rename type 'Taxa'
+1418308186093	Encapsulate field 'origem'
+1418308189785	Encapsulate field 'destino'
+1418308193727	Encapsulate field 'valor'
+1418308196800	Encapsulate field 'taxa'
+1418308200443	Encapsulate field 'data'
+1418308203837	Encapsulate field 'tipoTaxa'
